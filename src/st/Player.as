@@ -27,5 +27,4 @@ package st
         public var colonies:ArrayCollection = new ArrayCollection();
     }
 
-
 }

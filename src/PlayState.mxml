@@ -1,10 +1,24 @@
 <?xml version="1.0"?>
-<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-         xmlns:s="library://ns.adobe.com/flex/spark" width="100%" height="100%">
+<p:PGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          width="100%"
+          height="100%" xmlns:p="*">
 
+    <fx:Script><![CDATA[
+        import st.Player;
+
+        [Inject]
+        [Bindable]
+        public var player:Player;
+        ]]></fx:Script>
 
     <s:BitmapImage source="{ImageLib.PLANET_1}" left="150" verticalCenter="0" />
 
+    <s:VGroup top="30" right="30">
+        <s:Label text="cash {player.cashNow}" />
+        <s:Label text="debt {player.borrowed}" />
+        <s:Label text="profit {player.profit}" />
+    </s:VGroup>
 
     <!-- bottom -->
 
@@ -15,18 +29,18 @@
             </s:fill>
         </s:Rect>
 
-        <s:HGroup width="50%" gap="60" height="100%" verticalAlign="middle" left="30">
-            <s:Label text="Financials" />
-            <s:Label text="Ships Management" />
-            <s:Label text="Planets" />
-            <s:Label text="Traderoutes" />
+        <s:HGroup width="50%" gap="0" height="100%" verticalAlign="middle" left="30">
+            <s:Button label="Financials" styleName="btnNav" />
+            <s:Button label="Ships Management" styleName="btnNav" />
+            <s:Button label="Planets" styleName="btnNav" />
+            <s:Button label="Traderoutes" styleName="btnNav" />
         </s:HGroup>
 
-        <s:HGroup width="50%" gap="60" height="100%" verticalAlign="middle" right="30" layoutDirection="rtl">
-            <s:Label text="How to Play" />
-            <s:Label text="Notifications" />
+        <s:HGroup width="50%" gap="0" height="100%" verticalAlign="middle" right="30" layoutDirection="rtl">
+            <s:Button label="How to Play" styleName="btnNav" />
+            <s:Button label="Notifications" styleName="btnNav" />
         </s:HGroup>
 
     </s:Group>
 
-</s:Group>
+</p:PGroup>
