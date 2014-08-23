@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
-<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:parsley="http://www.spicefactory.org/parsley"
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                       xmlns:parsley="http://www.spicefactory.org/parsley"
+                       xmlns="*"
                        title="SpaceTycoon" width="1100" height="700"
-                       xmlns:s="library://ns.adobe.com/flex/spark" showStatusBar="false"
+                       backgroundColor="0x937f50"
+                       xmlns:s="library://ns.adobe.com/flex/spark"
+                       showStatusBar="false"
+                       frameRate="60"
                        addedToStage="addedToStage()">
 
     <fx:Declarations>
@@ -11,17 +16,36 @@
 
     </fx:Declarations>
 
+    <!--<fx:Style>-->
+    <!--@namespace s "library://ns.adobe.com/flex/spark";-->
+
+    <!--@font-face {-->
+    <!--embedAsCFF: true;-->
+    <!--src: url("assets/OpenSans-Light.ttf");-->
+    <!--fontFamily: "opensansl";-->
+    <!--}-->
+
+    <!--global {-->
+    <!--fontFamily: "opensansl";-->
+    <!--fontSize: 14px;-->
+    <!--}-->
+    <!--</fx:Style>-->
+
     <fx:Script>
+
         import st.Player;
+        import st.Ship;
 
         [Inject]
         public var player:Player;
 
+        [MessageDispatcher]
+        public var send:Function;
+
         private function addedToStage():void
         {
             this.visible = true;
-            //            this.stage.scaleMode = StageScaleMode.EXACT_FIT;
-            //            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
             trace("Init");
         }
@@ -29,6 +53,7 @@
         [Init]
         public function onParsleyInit():void
         {
+            send(new Ship());
         }
 
         private static function onKeyUp(event:KeyboardEvent):void
@@ -43,5 +68,7 @@
     </fx:Script>
 
     <s:BitmapImage source="{ImageLib.BACKGROUND}" width="100%" height="100%" />
+
+    <PlayState />
 
 </s:WindowedApplication>
