@@ -5,44 +5,44 @@
                        title="SpaceTycoon" width="1600" height="1200"
                        backgroundColor="0x937f50"
                        xmlns:s="library://ns.adobe.com/flex/spark"
+                       initialize="init()"
                        showStatusBar="false"
                        frameRate="60"
                        addedToStage="addedToStage()">
 
-    <fx:Style>
-        global {
-            font-size: 16px;
-            fontFamily: "Open Sans Light";
-            color: #050505;
-        }
-    </fx:Style>
+    <!--<fx:Style>-->
+    <!--global {-->
+    <!--font-size: 16px;-->
+    <!--fontFamily: "Open Sans Light";-->
+    <!--color: #050505;-->
+    <!--}-->
+    <!--</fx:Style>-->
 
     <fx:Declarations>
         <parsley:ContextBuilder config="Config" />
         <parsley:Configure />
     </fx:Declarations>
 
-    <!--<fx:Style>-->
-    <!--@namespace s "library://ns.adobe.com/flex/spark";-->
+    <fx:Style>
+        @namespace s "library://ns.adobe.com/flex/spark";
 
-    <!--@font-face {-->
-    <!--embedAsCFF: true;-->
-    <!--src: url("assets/OpenSans-Light.ttf");-->
-    <!--fontFamily: "opensansl";-->
-    <!--}-->
-
-    <!--global {-->
-    <!--fontFamily: "opensansl";-->
-    <!--fontSize: 14px;-->
-    <!--}-->
-    <!--</fx:Style>-->
+        global {
+            fontFamily: "osansl";
+            font-size: 16px;
+            color: #050505;
+        }
+    </fx:Style>
 
     <fx:Script>
-
         import mx.core.IVisualElement;
         import mx.core.UIComponent;
 
         import st.Player;
+
+        //Adobe Flex 4.13 Proper\bin>fontswf E:\LD48-SpaceTycoon\src\assets\OpenSans-Light.ttf -o E:\LD48-SpaceTycoon\src\assets\OpenSans-Light.swf -a osansl
+        [Embed(source="assets/OpenSans-Light.swf", symbol="osansl")]
+        private var fontClass:Class;
+        private var _alias:String = "osansl";
 
         [Inject]
         public var player:Player;
@@ -50,17 +50,18 @@
         [MessageDispatcher]
         public var send:Function;
 
+        private function init():void
+        {
+            Font.registerFont(fontClass);
+        }
+
         private function addedToStage():void
         {
             this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             visible = true;
             stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
             trace("Init");
-        }
 
-        [Init]
-        public function onParsleyInit():void
-        {
             var ui:UIComponent = new UIComponent();
             ui.addChild(new FPSCounter());
             this.addElement(ui as IVisualElement);
