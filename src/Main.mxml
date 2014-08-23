@@ -2,7 +2,7 @@
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:parsley="http://www.spicefactory.org/parsley"
                        xmlns="*"
-                       title="SpaceTycoon" width="1800" height="1100"
+                       title="SpaceTycoon" width="1600" height="1200"
                        backgroundColor="0x937f50"
                        xmlns:s="library://ns.adobe.com/flex/spark"
                        showStatusBar="false"
@@ -11,18 +11,14 @@
 
     <fx:Style>
         global {
-            font-size: 15px;
-            fontFamily: "Open Sans";
-        }
-
-        .btnNav {
-            skinClass: ClassReference("skins.ButtonNav");
-
+            font-size: 16px;
+            fontFamily: "Open Sans Light";
+            color: #050505;
         }
     </fx:Style>
 
     <fx:Declarations>
-    <parsley:ContextBuilder config="Config" />
+        <parsley:ContextBuilder config="Config" />
         <parsley:Configure />
     </fx:Declarations>
 
@@ -43,6 +39,9 @@
 
     <fx:Script>
 
+        import mx.core.IVisualElement;
+        import mx.core.UIComponent;
+
         import st.Player;
 
         [Inject]
@@ -53,22 +52,35 @@
 
         private function addedToStage():void
         {
-            this.visible = true;
-            //            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
-            this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
+            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            visible = true;
+            stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
             trace("Init");
         }
 
         [Init]
         public function onParsleyInit():void
         {
+            var ui:UIComponent = new UIComponent();
+            ui.addChild(new FPSCounter());
+            this.addElement(ui as IVisualElement);
         }
 
-        private static function onKeyUp(event:KeyboardEvent):void
+        private function onKeyUp(event:KeyboardEvent):void
         {
             if (event.keyCode == Keyboard.ESCAPE) {
                 if (NativeApplication.nativeApplication) {
                     NativeApplication.nativeApplication.exit();
+                }
+            }
+
+            if (event.keyCode == Keyboard.F &amp;&amp; event.ctrlKey) {
+                if (NativeApplication.nativeApplication) {
+                    if (stage.displayState == StageDisplayState.NORMAL)
+                        stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+                    else
+                        stage.displayState = StageDisplayState.NORMAL;
+
                 }
             }
         }
