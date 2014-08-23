@@ -3,7 +3,7 @@
                        xmlns:s="library://ns.adobe.com/flex/spark" showStatusBar="false"
                        addedToStage="addedToStage()">
 
-    <fx:Script><![CDATA[
+    <fx:Script>
         private function addedToStage():void
         {
             this.visible = true;
@@ -13,7 +13,7 @@
             trace("Init");
         }
 
-        private function onKeyUp(event:KeyboardEvent):void
+        private static function onKeyUp(event:KeyboardEvent):void
         {
             if (event.keyCode == Keyboard.ESCAPE) {
                 if (NativeApplication.nativeApplication) {
@@ -22,7 +22,7 @@
             }
         }
 
-        ]]></fx:Script>
+    </fx:Script>
     <s:BitmapImage source="{ImageLib.BACKGROUND}" width="100%" height="100%" />
 
 </s:WindowedApplication>
