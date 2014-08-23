@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="parsley-core-3.0.0" type="flex">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/swc/parsley-core-3.0.0.swc!/" />
+      <root url="jar://$PROJECT_DIR$/swc/parsley-flex-3.0.0.swc!/" />
+      <root url="jar://$PROJECT_DIR$/swc/parsley-xml-3.0.0.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

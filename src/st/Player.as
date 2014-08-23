@@ -4,27 +4,27 @@ package st
 
     public class Player
     {
-        [Bindable]
-        public var cashNow:Number;
+        [Bindable] // billions
+        public var cashNow:Number = 50;
 
         [Bindable]
-        public var profit:Number;
+        public var profit:Number = 0;
 
         [Bindable]
-        public var cashstart:Number;
+        public var cashstart:Number = 50;
 
         [Bindable]
-        public var borrowed:Number;
+        public var borrowed:Number = 0;
 
         [Bindable]
-        public var interest:Number;
+        public var interest:Number = 0.06;
 
         [Bindable]
         [ArrayElementType("st.Ship")]
-        public var ships:ArrayCollection;
+        public var ships:ArrayCollection = new ArrayCollection();
 
         [Bindable]
-        public var colonies:ArrayCollection;
+        public var colonies:ArrayCollection = new ArrayCollection();
     }
 
 

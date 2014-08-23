@@ -1,16 +1,34 @@
 <?xml version="1.0"?>
-<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" title="SpaceTycoon" width="1100" height="700"
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:parsley="http://www.spicefactory.org/parsley"
+                       title="SpaceTycoon" width="1100" height="700"
                        xmlns:s="library://ns.adobe.com/flex/spark" showStatusBar="false"
                        addedToStage="addedToStage()">
 
+    <fx:Declarations>
+
+        <parsley:ContextBuilder config="Config" />
+        <parsley:Configure />
+
+    </fx:Declarations>
+
     <fx:Script>
+        import st.Player;
+
+        [Inject]
+        public var player:Player;
+
         private function addedToStage():void
         {
             this.visible = true;
-            this.stage.scaleMode = StageScaleMode.EXACT_FIT;
-            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            //            this.stage.scaleMode = StageScaleMode.EXACT_FIT;
+            //            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             this.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
             trace("Init");
+        }
+
+        [Init]
+        public function onParsleyInit():void
+        {
         }
 
         private static function onKeyUp(event:KeyboardEvent):void
@@ -23,6 +41,7 @@
         }
 
     </fx:Script>
+
     <s:BitmapImage source="{ImageLib.BACKGROUND}" width="100%" height="100%" />
 
 </s:WindowedApplication>
