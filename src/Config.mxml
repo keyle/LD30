@@ -8,6 +8,7 @@
 
         <st:Player />
         <st:TimeModel />
+        <st:PlanetsLibrary />
 
     </fx:Declarations>
 
