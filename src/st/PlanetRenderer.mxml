@@ -3,10 +3,11 @@
                 xmlns:s="library://ns.adobe.com/flex/spark"
                 autoDrawBackground="false">
 
-    <s:HGroup verticalAlign="middle" minHeight="565" gap="-50">
+    <s:HGroup verticalAlign="middle" minHeight="300" gap="-50" paddingTop="{itemIndex * 50}">
 
-        <s:VGroup horizontalAlign="center" paddingTop="{itemIndex * 50}" depth="2">
-            <s:BitmapImage source="{Planet(data).image}" />
+        <s:VGroup horizontalAlign="center" depth="2">
+            <s:BitmapImage source="{Planet(data).image}" scaleMode="letterbox" maxWidth="300" maxHeight="300"
+                           smooth="true" />
             <s:Label text="{Planet(data).name}" fontSize="20" />
             <s:Label text="pop: {Planet(data).population}bn" fontSize="12" />
         </s:VGroup>
@@ -18,12 +19,13 @@
                 </s:fill>
             </s:Rect>
 
-            <s:VGroup paddingLeft="50" paddingTop="15">
-                <s:Label text="Food" color="{Planet(data).needsFood ? Global.RED : Global.GREEN}" />
-                <s:Label text="Medicine" color="{Planet(data).needsMedicine ? Global.RED : Global.GREEN}" />
-                <s:Label text="Carbon" color="{Planet(data).needsCarbon ? Global.RED : Global.GREEN}" />
-                <s:Label text="Oxygen" color="{Planet(data).needsOxygen ? Global.RED : Global.GREEN}" />
-                <s:Label text="Water" color="{Planet(data).needsWater ? Global.RED : Global.GREEN}" />
+            <s:VGroup paddingLeft="50" paddingTop="20">
+                <s:Label text="Food" fontSize="14" color="{Planet(data).needsFood ? Global.RED : Global.GREEN}" />
+                <s:Label text="Medicine" fontSize="14"
+                         color="{Planet(data).needsMedicine ? Global.RED : Global.GREEN}" />
+                <s:Label text="Carbon" fontSize="14" color="{Planet(data).needsCarbon ? Global.RED : Global.GREEN}" />
+                <s:Label text="Oxygen" fontSize="14" color="{Planet(data).needsOxygen ? Global.RED : Global.GREEN}" />
+                <s:Label text="Water" fontSize="14" color="{Planet(data).needsWater ? Global.RED : Global.GREEN}" />
             </s:VGroup>
         </s:Group>
     </s:HGroup>

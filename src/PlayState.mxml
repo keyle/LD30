@@ -57,8 +57,8 @@
                       click="{panelFinancials.setVisible(!panelFinancials.visible)}" />
             <s:Button label="Ships Management" skinClass="skins.ButtonNav"
                       click="{panelFleet.setVisible(!panelFleet.visible)}" />
-            <s:Button label="Planets" skinClass="skins.ButtonNav" />
-            <s:Button label="Traderoutes" skinClass="skins.ButtonNav" />
+            <s:Button label="Traderoutes" skinClass="skins.ButtonNav"
+                      click="{panelTraderoute.setVisible(!panelTraderoute.visible)}" />
         </s:HGroup>
 
         <s:HGroup width="50%" gap="0" height="100%" verticalAlign="middle" right="30" layoutDirection="rtl">
@@ -73,5 +73,8 @@
 
     <ps:Fleet id="panelFleet" visible="false"
               horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
+
+    <ps:Traderoute id="panelTraderoute" visible="false"
+                   horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
 
 </p:PGroup>

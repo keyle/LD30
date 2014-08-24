@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<c:PGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:pn="panels.*" minWidth="670" minHeight="400"
+          xmlns:c="*">
+
+    <fx:Script><![CDATA[
+        import st.Player;
+
+        [Inject]
+        [Bindable]
+        public var player:Player;
+        ]]></fx:Script>
+
+    <pn:PanelBase title="Traderoute" />
+
+    <s:VGroup top="110" left="30" right="30" bottom="30" gap="30">
+
+        <s:Group width="100%">
+            <s:DropDownList left="0" />
+            <s:DropDownList right="0" />
+        </s:Group>
+
+        <s:Group width="100%">
+
+            <s:BitmapImage source="{ImageLib.PLANET_1}" left="0" width="120" height="120" smooth="true" />
+
+            <s:VGroup horizontalCenter="0" verticalCenter="0">
+                <s:DropDownList />
+                <s:DropDownList />
+            </s:VGroup>
+
+            <s:BitmapImage source="{ImageLib.PLANET_3}" right="0" width="120" height="120" smooth="true" />
+
+        </s:Group>
+
+        <s:Button label="Start Traderoute" skinClass="skins.ButtonGreen" horizontalCenter="0" />
+
+    </s:VGroup>
+</c:PGroup>

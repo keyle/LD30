@@ -49,7 +49,7 @@
 
         private function addedToStage():void
         {
-            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            //            this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             this.stage.scaleMode = StageScaleMode.NO_SCALE;
             visible = true;
             stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);

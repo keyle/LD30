@@ -14,9 +14,11 @@ package st
         [ArrayElementType("st.TradeRoute")]
         public var traderoutes:ArrayCollection;
 
-        public function toString():String
+        public function newTradeRoute(steps:Array):void
         {
-            return "[ship ] " + capacity;
+            var t:TradeRoute = new TradeRoute();
+            t.tradeSteps = new ArrayCollection(steps);
+            traderoutes.addItem(t);
         }
     }
 }
