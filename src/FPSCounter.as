@@ -12,13 +12,14 @@ package
         private var ticks:uint = 0;
         private var tf:TextField;
 
-        public function FPSCounter(xPos:int = 0, yPos:int = 0, color:uint = 0x333333, fillBackground:Boolean = false, backgroundColor:uint = 0x000000)
+        public function FPSCounter(xPos:int = 0, yPos:int = 0, color:uint = 0x222222, fillBackground:Boolean = false, backgroundColor:uint = 0x000000)
         {
             x = xPos;
             y = yPos;
             tf = new TextField();
             tf.textColor = color;
             tf.text = "----- FPS";
+            tf.alpha = 0.5;
             tf.selectable = false;
             tf.background = fillBackground;
             tf.backgroundColor = backgroundColor;

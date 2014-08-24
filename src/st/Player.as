@@ -17,7 +17,10 @@ package st
         public var borrowed:Number = 0;
 
         [Bindable]
-        public var interest:Number = 0.06;
+        public var interest:Number = 0.03;
+
+        [Bindable]
+        public var fixedCost:Number = 1.2;
 
         [Bindable]
         [ArrayElementType("st.Ship")]
@@ -25,6 +28,13 @@ package st
 
         [Bindable]
         public var colonies:ArrayCollection = new ArrayCollection();
+
+        public function processNewYear():void
+        {
+            cashNow -= fixedCost;
+            cashNow -= interest * borrowed;
+            cashNow = Number(cashNow.toFixed(2));
+        }
     }
 
 }

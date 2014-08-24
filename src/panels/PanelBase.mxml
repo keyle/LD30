@@ -3,13 +3,26 @@
                    width="100%" height="100%"
                    backgroundColor="black" borderColor="white"
                    borderAlpha="0.7" borderWeight="2" borderStyle="solid"
-                   backgroundAlpha="0.90">
+                   backgroundAlpha="0.90"
+                   mouseDown="UIComponent(this.owner).startDrag()"
+                   addedToStage="addedToStage()">
 
     <fx:Script><![CDATA[
         import mx.core.UIComponent;
 
         [Bindable]
         public var title:String = "Default Title";
+
+        private function addedToStage():void
+        {
+            stage.addEventListener(MouseEvent.MOUSE_UP, stageMouseUP, false, 0, true);
+        }
+
+        private function stageMouseUP(event:MouseEvent):void
+        {
+            UIComponent(this.owner).stopDrag();
+            stage.invalidate();
+        }
         ]]></fx:Script>
 
     <s:Label text="{this.title}" top="30" left="30" color="white" fontSize="24" />

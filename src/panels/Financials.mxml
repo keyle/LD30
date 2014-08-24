@@ -19,15 +19,14 @@
 
         private function repay():void
         {
-            player.borrowed -= 100;
-            player.cashNow -= 100;
+            if (player.borrowed >= 100) {
+                player.borrowed -= 100;
+                player.cashNow -= 100;
+            }
         }
         ]]></fx:Script>
 
-    <pn:PanelBase title="Financials"
-                  mouseDown="this.startDrag()"
-                  mouseUp="this.stopDrag()"
-                  mouseDownOutside="this.stopDrag()" />
+    <pn:PanelBase title="Financials" />
 
     <s:VGroup top="90" left="30" right="30" bottom="30" gap="10">
 
@@ -47,7 +46,7 @@
         </s:HGroup>
 
         <s:HGroup>
-        <s:Label text="Profit ($bn)" color="aqua" width="120" />
+            <s:Label text="Profit ($bn)" color="aqua" width="120" />
             <s:Label text="{player.profit}" color="white" width="50" textAlign="right" />
         </s:HGroup>
 

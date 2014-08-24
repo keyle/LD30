@@ -8,6 +8,9 @@ package
         [Embed(source="assets/pl1.png")]
         public static const PLANET_1:Class;
 
+        [Embed(source="assets/asteroid.png")]
+        public static const ASTEROID:Class;
+
         [Embed(source="assets/closeicon.png")]
         public static const CLOSE:Class;
     }
