@@ -13,5 +13,8 @@ package
 
         [Embed(source="assets/closeicon.png")]
         public static const CLOSE:Class;
+
+        [Embed(source="assets/ship.png")]
+        public static const SHIP_1:Class;
     }
 }

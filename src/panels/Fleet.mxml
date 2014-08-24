@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<c:PGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:pn="panels.*" minWidth="670" minHeight="380"
+          xmlns:c="*">
+
+    <fx:Script><![CDATA[
+        import st.Player;
+
+        [Inject]
+        [Bindable]
+        public var player:Player;
+        ]]></fx:Script>
+
+    <pn:PanelBase title="Ship Fleet" />
+
+    <s:VGroup top="90" left="30" right="30" bottom="30" gap="20">
+
+        <s:HGroup>
+            <s:VGroup>
+                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
+                <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
+            </s:VGroup>
+
+            <s:BitmapImage source="{ImageLib.SHIP_1}" />
+
+            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
+        </s:HGroup>
+
+        <s:HGroup>
+            <s:VGroup>
+                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
+                <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
+            </s:VGroup>
+
+            <s:BitmapImage source="{ImageLib.SHIP_1}" />
+
+            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
+        </s:HGroup>
+
+        <s:HGroup>
+            <s:VGroup>
+                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
+                <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
+            </s:VGroup>
+
+            <s:BitmapImage source="{ImageLib.SHIP_1}" />
+
+            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
+        </s:HGroup>
+
+        <s:Spacer height="20" />
+
+        <s:HGroup width="100%" height="100%">
+            <s:Button label="Repay $100 bn" skinClass="skins.ButtonGreen" />
+        </s:HGroup>
+
+    </s:VGroup>
+</c:PGroup>

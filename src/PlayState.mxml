@@ -42,8 +42,10 @@
         </s:Rect>
 
         <s:HGroup width="50%" gap="0" height="100%" verticalAlign="middle" left="30">
-            <s:Button label="Financials" skinClass="skins.ButtonNav" click="{panelFinancials.setVisible(true)}" />
-            <s:Button label="Ships Management" skinClass="skins.ButtonNav" />
+            <s:Button label="Financials" skinClass="skins.ButtonNav"
+                      click="{panelFinancials.setVisible(!panelFinancials.visible)}" />
+            <s:Button label="Ships Management" skinClass="skins.ButtonNav"
+                      click="{panelFleet.setVisible(!panelFleet.visible)}" />
             <s:Button label="Planets" skinClass="skins.ButtonNav" />
             <s:Button label="Traderoutes" skinClass="skins.ButtonNav" />
         </s:HGroup>
@@ -57,5 +59,8 @@
 
     <ps:Financials id="panelFinancials" visible="false"
                    horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
+
+    <ps:Fleet id="panelFleet" visible="false"
+              horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
 
 </p:PGroup>
