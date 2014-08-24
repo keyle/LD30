@@ -16,7 +16,7 @@
     </s:states>
 
     <s:PopUpAnchor id="popUp" displayPopUp.normal="false" displayPopUp.open="true" includeIn="open"
-                   left="0" right="0" top="0" bottom="0" itemDestructionPolicy="auto"
+                   left="0" right="0" top="0" bottom="0" itemDestructionPolicy="auto" itemCreationPolicy="deferred"
                    popUpPosition="below" popUpWidthMatchesAnchorWidth="true">
 
         <s:Group id="dropDown">
@@ -53,4 +53,6 @@
              mouseEnabled="false" mouseChildren="false" color="white"
              left="15" right="30" height="100%" width="75" verticalCenter="1" />
 
+    <fx:Script><![CDATA[
+        ]]></fx:Script>
 </s:SparkSkin>
