@@ -13,5 +13,10 @@ package st
         [Bindable]
         [ArrayElementType("st.TradeRoute")]
         public var traderoutes:ArrayCollection;
+
+        public function toString():String
+        {
+            return "[ship ] " + capacity;
+        }
     }
 }
