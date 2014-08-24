@@ -26,9 +26,6 @@ package st
         [ArrayElementType("st.Ship")]
         public var ships:ArrayCollection = new ArrayCollection();
 
-        [Bindable]
-        public var colonies:ArrayCollection = new ArrayCollection();
-
         public function processNewYear():void
         {
             cashNow -= fixedCost;

@@ -2,6 +2,8 @@ package st
 {
     import flash.events.Event;
 
+    import mx.events.ResizeEvent;
+
     import spark.components.SkinnableContainer;
 
     public class Asteroids extends SkinnableContainer
@@ -13,6 +15,7 @@ package st
         {
             this.addEventListener(Event.ADDED_TO_STAGE, addedToStage, false, 0, true);
             this.addEventListener(Event.ENTER_FRAME, enterFrame, false, 0, true);
+
         }
 
         private function enterFrame(event:Event):void
@@ -25,11 +28,19 @@ package st
             }
         }
 
-        private function addedToStage(event:Event):void
+        private function addedToStage(event:Event = null):void
         {
             arr = [];
             for (var i:int = 0; i < 40; i++) {
                 arr.push(new Rock(this));
+            }
+            this.addEventListener(ResizeEvent.RESIZE, reinit, false, 0, true);
+        }
+
+        private function reinit(event:Event = null):void
+        {
+            for (var i:int = 0; i < 40; i++) {
+                Rock(arr[i]).reinit();
             }
         }
     }
@@ -58,6 +69,11 @@ class Rock
         this.parent = parent;
         parent.addElement(image);
 
+        initPos();
+    }
+
+    public function reinit():void
+    {
         initPos();
     }
 

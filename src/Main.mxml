@@ -2,7 +2,7 @@
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:parsley="http://www.spicefactory.org/parsley"
                        xmlns="*"
-                       title="SpaceTycoon" width="1600" height="1000"
+                       title="SpaceTycoon" width="1700" height="1000"
                        backgroundColor="0x937f50"
                        xmlns:s="library://ns.adobe.com/flex/spark"
                        initialize="init()"
@@ -62,7 +62,6 @@
         [Init]
         public function onParsleyInit():void
         {
-            player.addShip();
             player.addShip();
         }
 

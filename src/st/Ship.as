@@ -11,14 +11,24 @@ package st
         public var capacity:uint = 1.2;
 
         [Bindable]
-        [ArrayElementType("st.TradeRoute")]
-        public var traderoutes:ArrayCollection;
+        public var traderoute:TradeRoute = new TradeRoute();
+
+        private static var totalid:uint = 0;
+        private var id:uint = 0;
+
+        public function Ship()
+        {
+            this.id = ++totalid;
+        }
 
         public function newTradeRoute(steps:Array):void
         {
-            var t:TradeRoute = new TradeRoute();
-            t.tradeSteps = new ArrayCollection(steps);
-            traderoutes.addItem(t);
+            traderoute.tradeSteps = new ArrayCollection(steps);
+        }
+
+        public function toString():String
+        {
+            return "s" + this.id + "/" + traderoute;
         }
     }
 }

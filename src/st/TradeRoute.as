@@ -9,6 +9,11 @@ package st
 
         [Bindable]
         [ArrayElementType("st.TradeStep")]
-        public var tradeSteps:ArrayCollection;
+        public var tradeSteps:ArrayCollection = new ArrayCollection();
+
+        public function toString():String
+        {
+            return "(" + tradeSteps.length + ")";
+        }
     }
 }

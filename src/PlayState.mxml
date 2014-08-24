@@ -40,7 +40,7 @@
         <s:Label text="cash $bn: {player.cashNow}" />
         <s:Label text="debt $bn: {player.borrowed}" />
         <s:Label text="profit $bn: {player.profit}" />
-        <s:Label text="ships: {player.ships.length}" />
+        <s:Label text="ships: {player.ships}" />
     </s:VGroup>
 
     <!-- bottom -->

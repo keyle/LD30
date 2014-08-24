@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
                    width="100%" height="100%"
-                   backgroundColor="black" borderColor="white"
-                   borderAlpha="0.7" borderWeight="2" borderStyle="solid"
-                   backgroundAlpha="0.90"
-                   mouseDown="UIComponent(this.owner).startDrag()"
+                   backgroundColor="black" borderColor="0xf5f5f5"
+                   borderAlpha="1" borderWeight="2" borderStyle="solid"
+                   backgroundAlpha="1"
                    addedToStage="addedToStage()">
+    <!--mouseDown="UIComponent(this.owner).startDrag()"-->
+
+    <s:RectangularDropShadow id="dropShadow" blurX="17" blurY="17" alpha="0.9" distance="5"
+                             angle="45" color="#000000" left="0" top="0" right="0" bottom="0" />
+
 
     <fx:Script><![CDATA[
         import mx.core.UIComponent;
@@ -15,14 +19,14 @@
 
         private function addedToStage():void
         {
-            stage.addEventListener(MouseEvent.MOUSE_UP, stageMouseUP, false, 0, true);
+            //            stage.addEventListener(MouseEvent.MOUSE_UP, stageMouseUP, false, 0, true);
         }
 
-        private function stageMouseUP(event:MouseEvent):void
-        {
-            UIComponent(this.owner).stopDrag();
-            stage.invalidate();
-        }
+        //        private function stageMouseUP(event:MouseEvent):void
+        //        {
+        //            UIComponent(this.owner).stopDrag();
+        //            stage.invalidate();
+        //        }
         ]]></fx:Script>
 
     <s:Label text="{this.title}" top="30" left="30" color="white" fontSize="24" />

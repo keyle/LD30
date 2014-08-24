@@ -3,9 +3,6 @@ package st
     public class TradeStep
     {
         [Bindable]
-        public var name:String;
-
-        [Bindable]
         public var colony:Planet;
 
         [Bindable]

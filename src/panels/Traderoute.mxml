@@ -8,6 +8,8 @@
         import st.MaterialLibrary;
         import st.PlanetsLibrary;
         import st.Player;
+        import st.Ship;
+        import st.TradeStep;
 
         [Inject]
         [Bindable]
@@ -20,16 +22,47 @@
         [Inject]
         [Bindable]
         public var materialLibrary:MaterialLibrary;
+
+        private function startClick():void
+        {
+            // validate here
+            if (planet1.selectedIndex == -1
+                    || planet2.selectedIndex == -1
+                    || material1.selectedIndex == -1
+                    || material2.selectedIndex == -1)
+            {
+                warning.visible = warning.includeInLayout = true;
+            }
+            else {
+                warning.visible = warning.includeInLayout = false;
+            }
+
+            var step1:TradeStep = new TradeStep();
+            step1.colony = planet1.selectedItem;
+            step1.unload = material2.selectedItem;
+            step1.load = material1.selectedItem;
+            var step2:TradeStep = new TradeStep();
+            step2.colony = planet2.selectedItem;
+            step2.unload = material1.selectedItem;
+            step2.load = material2.selectedItem;
+
+            Ship(player.ships[0]).newTradeRoute([step1, step2]);
+
+            this.visible = false;
+            planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex = material2.selectedIndex = -1;
+        }
         ]]></fx:Script>
 
     <pn:PanelBase title="Traderoute" />
 
     <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
 
+        <s:Label id="warning" text="Invalid selection" color="{Global.RED}" visible="false" includeInLayout="false" />
+
         <s:Group width="100%">
-            <s:DropDownList left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
+            <s:DropDownList id="planet1" left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
                             prompt="Please Select" />
-            <s:DropDownList right="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
+            <s:DropDownList id="planet2" right="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
                             prompt="Please Select" />
         </s:Group>
 
@@ -40,9 +73,9 @@
             <s:BitmapImage source="{ImageLib.ARROWS}" horizontalCenter="0" verticalCenter="0" />
 
             <s:VGroup horizontalCenter="0" verticalCenter="0" gap="20">
-                <s:DropDownList skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
+                <s:DropDownList id="material1" skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
                                 prompt="Please Select" />
-                <s:DropDownList skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
+                <s:DropDownList id="material2" skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
                                 prompt="Please Select" />
             </s:VGroup>
 
@@ -50,7 +83,8 @@
 
         </s:Group>
 
-        <s:Button label="Start Traderoute" skinClass="skins.ButtonGreen" horizontalCenter="0" />
+        <s:Button label="Start Traderoute" click="startClick()"
+                  skinClass="skins.ButtonGreen" horizontalCenter="10" />
 
     </s:VGroup>
 </c:PGroup>
