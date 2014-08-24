@@ -16,6 +16,11 @@
 
     <s:VGroup top="110" left="30" right="30" bottom="30" gap="30">
 
+        <s:HGroup>
+            <s:Label text="Current Funds ($bn)" color="aqua" width="140" />
+            <s:Label text="{player.cashNow}" color="white" width="50" textAlign="right" />
+        </s:HGroup>
+
         <s:HGroup height="55" gap="50">
             <s:VGroup width="30%">
                 <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
