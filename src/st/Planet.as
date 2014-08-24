@@ -34,5 +34,10 @@ package st
         [Bindable]
         public var needsWater:Boolean;
 
+        public function toString():String
+        {
+            return name;
+        }
+
     }
 }

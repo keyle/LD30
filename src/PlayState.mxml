@@ -74,7 +74,7 @@
     <ps:Fleet id="panelFleet" visible="false"
               horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
 
-    <ps:Traderoute id="panelTraderoute" visible="false"
-                   horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
+    <ps:Traderoute id="panelTraderoute" visible="true"
+                   horizontalCenter="0" verticalCenter="-120" cacheAsBitmap="true" />
 
 </p:PGroup>

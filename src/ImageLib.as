@@ -20,6 +20,12 @@ package
         [Embed(source="assets/closeicon.png")]
         public static const CLOSE:Class;
 
+        [Embed(source="assets/dropdownpin.png")]
+        public static const DROPDOWN_PIN:Class;
+
+        [Embed(source="assets/arrows.png")]
+        public static const ARROWS:Class;
+
         [Embed(source="assets/ship.png")]
         public static const SHIP_1:Class;
     }

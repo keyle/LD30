@@ -5,7 +5,9 @@ package st
         [Bindable]
         public var name:String;
 
-        [Bindable]
-        public var price:Number;
+        public function toString():String
+        {
+            return name;
+        }
     }
 }

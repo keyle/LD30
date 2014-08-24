@@ -5,29 +5,45 @@
           xmlns:c="*">
 
     <fx:Script><![CDATA[
+        import st.MaterialLibrary;
+        import st.PlanetsLibrary;
         import st.Player;
 
         [Inject]
         [Bindable]
         public var player:Player;
+
+        [Inject]
+        [Bindable]
+        public var planetLibrary:PlanetsLibrary;
+
+        [Inject]
+        [Bindable]
+        public var materialLibrary:MaterialLibrary;
         ]]></fx:Script>
 
     <pn:PanelBase title="Traderoute" />
 
-    <s:VGroup top="110" left="30" right="30" bottom="30" gap="30">
+    <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
 
         <s:Group width="100%">
-            <s:DropDownList left="0" />
-            <s:DropDownList right="0" />
+            <s:DropDownList left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
+                            prompt="Please Select" />
+            <s:DropDownList right="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
+                            prompt="Please Select" />
         </s:Group>
 
         <s:Group width="100%">
 
             <s:BitmapImage source="{ImageLib.PLANET_1}" left="0" width="120" height="120" smooth="true" />
 
-            <s:VGroup horizontalCenter="0" verticalCenter="0">
-                <s:DropDownList />
-                <s:DropDownList />
+            <s:BitmapImage source="{ImageLib.ARROWS}" horizontalCenter="0" verticalCenter="0" />
+
+            <s:VGroup horizontalCenter="0" verticalCenter="0" gap="20">
+                <s:DropDownList skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
+                                prompt="Please Select" />
+                <s:DropDownList skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
+                                prompt="Please Select" />
             </s:VGroup>
 
             <s:BitmapImage source="{ImageLib.PLANET_3}" right="0" width="120" height="120" smooth="true" />
