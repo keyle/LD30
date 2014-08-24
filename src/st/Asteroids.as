@@ -45,8 +45,8 @@ class Rock
     private var parent:Asteroids;
 
     private var sizedev:Number = 0.5 + Math.random() * 0.5;
-    private var deviationx:Number = Math.random() * 0.2 * sizedev * 2;
-    private var deviationy:Number = Math.random() * 0.2 * sizedev * 2;
+    private var deviationx:Number = Math.random() * 0.4 * sizedev * 2;
+    private var deviationy:Number = Math.random() * 0.4 * sizedev * 2;
 
     public function Rock(parent:Asteroids)
     {

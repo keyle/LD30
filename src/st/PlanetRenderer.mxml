@@ -1,16 +1,31 @@
 <?xml version="1.0"?>
 <s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
-                xmlns:s="library://ns.adobe.com/flex/spark" autoDrawBackground="false">
+                xmlns:s="library://ns.adobe.com/flex/spark"
+                autoDrawBackground="false">
 
-    <s:HGroup verticalAlign="middle">
-        <s:VGroup horizontalAlign="center">
+    <s:HGroup verticalAlign="middle" minHeight="565" gap="-50">
+
+        <s:VGroup horizontalAlign="center" paddingTop="{itemIndex * 40}" depth="2">
             <s:BitmapImage source="{Planet(data).image}" />
             <s:Label text="{Planet(data).name}" fontSize="20" />
-            <s:Label text="{Planet(data).population}" fontSize="12" />
+            <s:Label text="pop: {Planet(data).population}bn" fontSize="12" />
         </s:VGroup>
-        <s:VGroup>
-            <s:Label text="needs" />
-        </s:VGroup>
+
+        <s:Group depth="-2">
+            <s:Rect width="134" height="138">
+                <s:fill>
+                    <s:SolidColor color="black" />
+                </s:fill>
+            </s:Rect>
+
+            <s:VGroup>
+                <s:Label text="Food" color="{Planet(data).needsFood ? Global.RED : Global.GREEN}" />
+                <s:Label text="Medicine" color="{Planet(data).needsMedicine ? Global.RED : Global.GREEN}" />
+                <s:Label text="Carbon" color="{Planet(data).needsCarbon ? Global.RED : Global.GREEN}" />
+                <s:Label text="Oxygen" color="{Planet(data).needsOxygen ? Global.RED : Global.GREEN}" />
+                <s:Label text="Water" color="{Planet(data).needsWater ? Global.RED : Global.GREEN}" />
+            </s:VGroup>
+        </s:Group>
     </s:HGroup>
 
 </s:ItemRenderer>
