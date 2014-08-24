@@ -6,7 +6,7 @@
     <s:HGroup verticalAlign="middle" minHeight="565" gap="-50">
 
         <s:VGroup horizontalAlign="center" paddingTop="{itemIndex * 50}" depth="2">
-        <s:BitmapImage source="{Planet(data).image}" />
+            <s:BitmapImage source="{Planet(data).image}" />
             <s:Label text="{Planet(data).name}" fontSize="20" />
             <s:Label text="pop: {Planet(data).population}bn" fontSize="12" />
         </s:VGroup>
@@ -19,7 +19,7 @@
             </s:Rect>
 
             <s:VGroup paddingLeft="50" paddingTop="15">
-            <s:Label text="Food" color="{Planet(data).needsFood ? Global.RED : Global.GREEN}" />
+                <s:Label text="Food" color="{Planet(data).needsFood ? Global.RED : Global.GREEN}" />
                 <s:Label text="Medicine" color="{Planet(data).needsMedicine ? Global.RED : Global.GREEN}" />
                 <s:Label text="Carbon" color="{Planet(data).needsCarbon ? Global.RED : Global.GREEN}" />
                 <s:Label text="Oxygen" color="{Planet(data).needsOxygen ? Global.RED : Global.GREEN}" />
