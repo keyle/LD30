@@ -8,6 +8,9 @@ package st
         public var name:String;
 
         [Bindable]
+        public var population:Number;
+
+        [Bindable]
         public var image:Class;
 
         [Bindable]

@@ -8,6 +8,12 @@ package
         [Embed(source="assets/pl1.png")]
         public static const PLANET_1:Class;
 
+        [Embed(source="assets/pl2.png")]
+        public static const PLANET_2:Class;
+
+        [Embed(source="assets/pl3.png")]
+        public static const PLANET_3:Class;
+
         [Embed(source="assets/asteroid.png")]
         public static const ASTEROID:Class;
 

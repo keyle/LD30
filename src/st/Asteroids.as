@@ -20,7 +20,7 @@ package st
             if (!arr)
                 return;
 
-            for (var i:int = 0; i < 60; i++) {
+            for (var i:int = 0; i < 40; i++) {
                 arr[i].update();
             }
         }
@@ -28,7 +28,7 @@ package st
         private function addedToStage(event:Event):void
         {
             arr = [];
-            for (var i:int = 0; i < 60; i++) {
+            for (var i:int = 0; i < 40; i++) {
                 arr.push(new Rock(this));
             }
         }
@@ -86,7 +86,7 @@ class Rock
             image.y = -30;
         }
 
-        image.x = Math.round(image.x);
-        image.y = Math.round(image.y);
+        image.x = Math.floor(image.x);
+        image.y = Math.floor(image.y);
     }
 }
