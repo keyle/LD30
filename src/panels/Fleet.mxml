@@ -18,36 +18,37 @@
 
         <s:HGroup height="55" gap="50">
             <s:VGroup width="30%">
-            <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
+                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
                 <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
             </s:VGroup>
 
             <s:BitmapImage source="{ImageLib.SHIP_1}" />
 
-            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
+            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen"
+                      click="player.addShip()" />
         </s:HGroup>
 
-        <s:HGroup height="55" gap="50">
-            <s:VGroup width="30%">
-                <s:Label text="ALX Cruiser Mark III  ($bn 6.0)" fontSize="14" color="white" />
-                <s:Label text="Capacity: 1.6 GTons" fontSize="12" color="white" />
-            </s:VGroup>
+        <!--<s:HGroup height="55" gap="50">-->
+        <!--<s:VGroup width="30%">-->
+        <!--<s:Label text="ALX Cruiser Mark III  ($bn 6.0)" fontSize="14" color="white" />-->
+        <!--<s:Label text="Capacity: 1.6 GTons" fontSize="12" color="white" />-->
+        <!--</s:VGroup>-->
 
-            <s:BitmapImage source="{ImageLib.SHIP_1}" />
+        <!--<s:BitmapImage source="{ImageLib.SHIP_1}" />-->
 
-            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
-        </s:HGroup>
+        <!--<s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />-->
+        <!--</s:HGroup>-->
 
-        <s:HGroup height="55" gap="50">
-            <s:VGroup width="30%">
-                <s:Label text="ALX Cruiser Mark IV  ($bn 8.5)" fontSize="14" color="white" />
-                <s:Label text="Capacity: 2.5 GTons" fontSize="12" color="white" />
-            </s:VGroup>
+        <!--<s:HGroup height="55" gap="50">-->
+        <!--<s:VGroup width="30%">-->
+        <!--<s:Label text="ALX Cruiser Mark IV  ($bn 8.5)" fontSize="14" color="white" />-->
+        <!--<s:Label text="Capacity: 2.5 GTons" fontSize="12" color="white" />-->
+        <!--</s:VGroup>-->
 
-            <s:BitmapImage source="{ImageLib.SHIP_1}" />
+        <!--<s:BitmapImage source="{ImageLib.SHIP_1}" />-->
 
-            <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
-        </s:HGroup>
+        <!--<s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />-->
+        <!--</s:HGroup>-->
 
     </s:VGroup>
 </c:PGroup>

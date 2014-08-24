@@ -35,6 +35,15 @@ package st
             cashNow -= interest * borrowed;
             cashNow = Number(cashNow.toFixed(2));
         }
+
+        public function addShip():void
+        {
+            cashNow -= 4;
+
+            var s:Ship = new Ship();
+            s.icon = ImageLib.SHIP_1;
+            ships.addItem(s);
+        }
     }
 
 }
