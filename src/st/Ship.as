@@ -5,7 +5,7 @@ package st
     public class Ship
     {
         [Bindable]
-        public var icon:Class;
+        public var icon:Class = ImageLib.SHIP_1;
 
         [Bindable]
         public var capacity:uint = 1.2;

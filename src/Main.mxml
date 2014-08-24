@@ -50,12 +50,20 @@
         private function addedToStage():void
         {
             this.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            this.stage.scaleMode = StageScaleMode.NO_SCALE;
             visible = true;
             stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp, false, 0, true);
 
             var ui:UIComponent = new UIComponent();
             ui.addChild(new FPSCounter(30, 10));
             this.addElement(ui as IVisualElement);
+        }
+
+        [Init]
+        public function onParsleyInit():void
+        {
+            player.addShip();
+            player.addShip();
         }
 
         private function onKeyUp(event:KeyboardEvent):void

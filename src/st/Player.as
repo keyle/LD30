@@ -40,9 +40,7 @@ package st
         {
             cashNow -= 4;
 
-            var s:Ship = new Ship();
-            s.icon = ImageLib.SHIP_1;
-            ships.addItem(s);
+            ships.addItem(new Ship());
         }
     }
 
