@@ -14,11 +14,11 @@
 
     <pn:PanelBase title="Ship Fleet" />
 
-    <s:VGroup top="90" left="30" right="30" bottom="30" gap="20">
+    <s:VGroup top="110" left="30" right="30" bottom="30" gap="30">
 
-        <s:HGroup>
-            <s:VGroup>
-                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
+        <s:HGroup height="55" gap="50">
+            <s:VGroup width="30%">
+            <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
                 <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
             </s:VGroup>
 
@@ -27,10 +27,10 @@
             <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
         </s:HGroup>
 
-        <s:HGroup>
-            <s:VGroup>
-                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
-                <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
+        <s:HGroup height="55" gap="50">
+            <s:VGroup width="30%">
+                <s:Label text="ALX Cruiser Mark III  ($bn 6.0)" fontSize="14" color="white" />
+                <s:Label text="Capacity: 1.6 GTons" fontSize="12" color="white" />
             </s:VGroup>
 
             <s:BitmapImage source="{ImageLib.SHIP_1}" />
@@ -38,21 +38,15 @@
             <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
         </s:HGroup>
 
-        <s:HGroup>
-            <s:VGroup>
-                <s:Label text="ALX Cruiser Mark II  ($bn 4.0)" fontSize="14" color="white" />
-                <s:Label text="Capacity: 1.2 GTons" fontSize="12" color="white" />
+        <s:HGroup height="55" gap="50">
+            <s:VGroup width="30%">
+                <s:Label text="ALX Cruiser Mark IV  ($bn 8.5)" fontSize="14" color="white" />
+                <s:Label text="Capacity: 2.5 GTons" fontSize="12" color="white" />
             </s:VGroup>
 
             <s:BitmapImage source="{ImageLib.SHIP_1}" />
 
             <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen" />
-        </s:HGroup>
-
-        <s:Spacer height="20" />
-
-        <s:HGroup width="100%" height="100%">
-            <s:Button label="Repay $100 bn" skinClass="skins.ButtonGreen" />
         </s:HGroup>
 
     </s:VGroup>
