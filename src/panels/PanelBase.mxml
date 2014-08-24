@@ -5,7 +5,6 @@
                    borderAlpha="1" borderWeight="2" borderStyle="solid"
                    backgroundAlpha="1"
                    addedToStage="addedToStage()">
-    <!--mouseDown="UIComponent(this.owner).startDrag()"-->
 
     <s:RectangularDropShadow id="dropShadow" blurX="17" blurY="17" alpha="0.9" distance="5"
                              angle="45" color="#000000" left="0" top="0" right="0" bottom="0" />
@@ -17,22 +16,37 @@
         [Bindable]
         public var title:String = "Default Title";
 
+        private static var maxDepth:int = 100;
+
         private function addedToStage():void
         {
-            //            stage.addEventListener(MouseEvent.MOUSE_UP, stageMouseUP, false, 0, true);
+            UIComponent(this.owner).includeInLayout = false;
+            stage.addEventListener(MouseEvent.MOUSE_UP, stageMouseUP, false, 0, true);
+            this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown, false, 0, true);
         }
 
-        //        private function stageMouseUP(event:MouseEvent):void
-        //        {
-        //            UIComponent(this.owner).stopDrag();
-        //            stage.invalidate();
-        //        }
+        private function stageMouseUP(event:MouseEvent):void
+        {
+            UIComponent(this.owner).stopDrag();
+        }
+
+        private function mouseDown(event:MouseEvent):void
+        {
+            trace(UIComponent(this.owner).depth);
+            UIComponent(this.owner).depth = ++maxDepth;
+            UIComponent(this.owner).startDrag();
+        }
+
+        private function hide():void
+        {
+            UIComponent(this.owner).setVisible(false);
+        }
         ]]></fx:Script>
 
     <s:Label text="{this.title}" top="30" left="30" color="white" fontSize="24" />
 
     <s:Button icon="{ImageLib.CLOSE}" right="30" top="25"
-              click="UIComponent(this.owner).setVisible(false)"
+              click="hide();"
               skinClass="skins.ButtonClose" />
 
 </s:BorderContainer>

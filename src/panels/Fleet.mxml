@@ -4,7 +4,7 @@
           xmlns:pn="panels.*" minWidth="670" minHeight="380"
           xmlns:c="*">
 
-    <fx:Script><![CDATA[
+<fx:Script><![CDATA[
         import st.Player;
 
         [Inject]

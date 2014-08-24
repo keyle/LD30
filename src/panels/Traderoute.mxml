@@ -2,7 +2,7 @@
 <c:PGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
           xmlns:pn="panels.*" minWidth="670" minHeight="400"
-          xmlns:c="*">
+          xmlns:c="*" show="onShow()">
 
     <fx:Script><![CDATA[
         import st.MaterialLibrary;
@@ -32,6 +32,7 @@
                     || material2.selectedIndex == -1)
             {
                 warning.visible = warning.includeInLayout = true;
+                return;
             }
             else {
                 warning.visible = warning.includeInLayout = false;
@@ -47,9 +48,19 @@
             step2.load = material2.selectedItem;
 
             Ship(player.ships[0]).newTradeRoute([step1, step2]);
-
             this.visible = false;
+            cleanup();
+        }
+
+        public function cleanup():void
+        {
+            warning.visible = warning.includeInLayout = false;
             planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex = material2.selectedIndex = -1;
+        }
+
+        private function onShow():void
+        {
+            cleanup();
         }
         ]]></fx:Script>
 
@@ -57,7 +68,6 @@
 
     <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
 
-        <s:Label id="warning" text="Invalid selection" color="{Global.RED}" visible="false" includeInLayout="false" />
 
         <s:Group width="100%">
             <s:DropDownList id="planet1" left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
@@ -82,6 +92,9 @@
             <s:BitmapImage source="{ImageLib.PLANET_3}" right="0" width="120" height="120" smooth="true" />
 
         </s:Group>
+
+        <s:Label id="warning" text="Invalid selection. Please check above." color="{Global.RED}" visible="false"
+                 includeInLayout="false" />
 
         <s:Button label="Start Traderoute" click="startClick()"
                   skinClass="skins.ButtonGreen" horizontalCenter="10" />

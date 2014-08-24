@@ -68,13 +68,15 @@
 
     </s:Group>
 
-    <ps:Financials id="panelFinancials" visible="false"
-                   horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
-
-    <ps:Fleet id="panelFleet" visible="false"
-              horizontalCenter="0" verticalCenter="-150" cacheAsBitmap="true" />
 
     <ps:Traderoute id="panelTraderoute" visible="true"
-                   horizontalCenter="0" verticalCenter="-120" cacheAsBitmap="true" />
+                   horizontalCenter="0" bottom="50" cacheAsBitmap="true" />
+
+    <ps:Financials id="panelFinancials" visible="false"
+                   horizontalCenter="0" bottom="50" cacheAsBitmap="true" />
+
+    <ps:Fleet id="panelFleet" visible="false"
+              horizontalCenter="0" bottom="50" cacheAsBitmap="true" />
+
 
 </p:PGroup>
