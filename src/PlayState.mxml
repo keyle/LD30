@@ -70,7 +70,7 @@
 
 
     <ps:NewTraderoute id="panelTraderoute" visible="true"
-                      horizontalCenter="0" bottom="100" cacheAsBitmap="true" />
+                      horizontalCenter="0" verticalCenter="0" cacheAsBitmap="true" />
 
 
     <ps:Financials id="panelFinancials" visible="false"

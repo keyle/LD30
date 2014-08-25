@@ -8,6 +8,7 @@
         import mx.collections.ArrayCollection;
 
         import st.MaterialLibrary;
+        import st.Planet;
         import st.PlanetsLibrary;
         import st.Player;
         import st.Ship;
@@ -72,6 +73,16 @@
         {
             cleanup();
         }
+
+        private function onPlanetChange1():void
+        {
+            planeticon1.source = Planet(planet1.selectedItem).image;
+        }
+
+        private function onPlanetChange2():void
+        {
+            planeticon2.source = Planet(planet2.selectedItem).image;
+        }
         ]]></fx:Script>
 
     <pn:PanelBase title="Traderoute" />
@@ -80,14 +91,14 @@
 
         <s:Group width="100%">
             <s:DropDownList id="planet1" left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
-                            prompt="Please Select" />
+                            prompt="Please Select" change="onPlanetChange1()" />
             <s:DropDownList id="planet2" right="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
-                            prompt="Please Select" />
+                            prompt="Please Select" change="onPlanetChange2()" />
         </s:Group>
 
         <s:Group width="100%">
 
-            <s:BitmapImage source="{ImageLib.PLANET_1}" left="0" width="120" height="120" smooth="true" />
+            <s:BitmapImage id="planeticon1" left="0" width="120" height="120" smooth="true" />
 
             <s:BitmapImage source="{ImageLib.ARROWS}" horizontalCenter="0" verticalCenter="0" />
 
@@ -98,7 +109,7 @@
                                 prompt="Please Select" />
             </s:VGroup>
 
-            <s:BitmapImage source="{ImageLib.PLANET_3}" right="0" width="120" height="120" smooth="true" />
+            <s:BitmapImage id="planeticon2" right="0" width="120" height="120" smooth="true" />
 
         </s:Group>
 

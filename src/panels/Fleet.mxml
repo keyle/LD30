@@ -5,16 +5,25 @@
           xmlns:c="*">
 
 <fx:Script><![CDATA[
-        import st.Player;
+    import st.Player;
 
-        [Inject]
-        [Bindable]
-        public var player:Player;
-        ]]></fx:Script>
+    [Inject]
+    [Bindable]
+    public var player:Player;
+    ]]></fx:Script>
 
     <pn:PanelBase title="Ship Fleet" />
 
     <s:VGroup top="110" left="30" right="30" bottom="30" gap="30">
+
+
+        <s:Label text="Current Fleet" color="white" />
+
+        <s:DataGroup dataProvider="{player.ships}" itemRenderer="spark.skins.spark.DefaultItemRenderer">
+            <s:layout>
+                <s:VerticalLayout gap="20" />
+            </s:layout>
+        </s:DataGroup>
 
         <s:HGroup>
             <s:Label text="Current Funds ($bn):" color="aqua" />
@@ -32,7 +41,6 @@
             <s:Button label="Purchase" fontSize="14" width="150" height="30" skinClass="skins.ButtonGreen"
                       click="player.addShip()" />
         </s:HGroup>
-
 
     </s:VGroup>
 </c:PGroup>
