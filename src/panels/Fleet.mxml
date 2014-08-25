@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <c:PGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
           xmlns:s="library://ns.adobe.com/flex/spark"
-          xmlns:pn="panels.*" minWidth="670" minHeight="380"
+          xmlns:pn="panels.*" minWidth="670" minHeight="450"
           xmlns:c="*">
 
-<fx:Script><![CDATA[
-    import st.Player;
+    <fx:Script><![CDATA[
+        import st.Player;
 
-    [Inject]
-    [Bindable]
-    public var player:Player;
-    ]]></fx:Script>
+        [Inject]
+        [Bindable]
+        public var player:Player;
+        ]]></fx:Script>
 
     <pn:PanelBase title="Ship Fleet" />
 
@@ -19,11 +19,12 @@
 
         <s:Label text="Current Fleet" color="white" />
 
-        <s:DataGroup dataProvider="{player.ships}" itemRenderer="spark.skins.spark.DefaultItemRenderer">
+        <s:List dataProvider="{player.ships}" itemRenderer="st.ShipRenderer" width="99%"
+                height="160">
             <s:layout>
-                <s:VerticalLayout gap="20" />
+                <s:VerticalLayout gap="8" />
             </s:layout>
-        </s:DataGroup>
+        </s:List>
 
         <s:HGroup>
             <s:Label text="Current Funds ($bn):" color="aqua" />

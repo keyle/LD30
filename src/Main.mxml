@@ -23,6 +23,15 @@
             font-size: 16px;
             color: #050505;
         }
+
+        s|List {
+            contentBackgroundAlpha: 0;
+            borderVisible: false;
+        }
+
+        s|VScrollBar {
+            skinClass: ClassReference("skins.VScrollBarSkin");
+        }
     </fx:Style>
 
     <fx:Script>
