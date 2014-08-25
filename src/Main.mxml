@@ -25,7 +25,8 @@
         }
 
         s|List {
-            contentBackgroundAlpha: 0;
+            contentBackgroundAlpha: 0.1;
+            contentBackgroundColor: white;
             borderVisible: false;
         }
 
