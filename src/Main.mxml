@@ -63,6 +63,7 @@
         public function onParsleyInit():void
         {
             player.addShip();
+            player.addShip();
         }
 
         private function onKeyUp(event:KeyboardEvent):void
