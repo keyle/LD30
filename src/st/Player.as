@@ -26,11 +26,22 @@ package st
         [ArrayElementType("st.Ship")]
         public var ships:ArrayCollection = new ArrayCollection();
 
+        [Bindable]
+        [ArrayElementType("st.Traderoute")]
+        public var traderoutes:ArrayCollection = new ArrayCollection();
+
         public function processNewYear():void
         {
             cashNow -= fixedCost;
             cashNow -= interest * borrowed;
             cashNow = Number(cashNow.toFixed(2));
+        }
+
+        public function processNewMonth():void
+        {
+            for each (var ship:Ship in ships) {
+                ship.age++;
+            }
         }
 
         public function addShip():void
@@ -40,5 +51,4 @@ package st
             ships.addItem(new Ship());
         }
     }
-
 }

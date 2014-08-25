@@ -2,11 +2,8 @@ package st
 {
     import mx.collections.ArrayCollection;
 
-    public class TradeRoute
+    public class Traderoute
     {
-        [Bindable]
-        public var name:String;
-
         [Bindable]
         [ArrayElementType("st.TradeStep")]
         public var tradeSteps:ArrayCollection = new ArrayCollection();

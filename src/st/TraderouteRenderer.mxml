@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                xmlns:s="library://ns.adobe.com/flex/spark"
+                autoDrawBackground="false"
+                minHeight="40">
+
+    <s:VGroup>
+        <s:Label text="traderoute" />
+        <s:HGroup width="100%" height="100%">
+            <s:Label text="from {TradeStep(Traderoute(data).tradeSteps[0]).colony}" />
+            <s:Label text="unload {TradeStep(Traderoute(data).tradeSteps[0]).unload}" />
+            <s:Label text="load {TradeStep(Traderoute(data).tradeSteps[0]).load}" />
+        </s:HGroup>
+        <s:HGroup width="100%" height="100%">
+            <s:Label text="from {TradeStep(Traderoute(data).tradeSteps[1]).colony}" />
+            <s:Label text="unload {TradeStep(Traderoute(data).tradeSteps[1]).unload}" />
+            <s:Label text="load {TradeStep(Traderoute(data).tradeSteps[1]).load}" />
+        </s:HGroup>
+    </s:VGroup>
+
+
+</s:ItemRenderer>

@@ -40,6 +40,7 @@ package st
                 player.processNewYear();
                 trace("new year " + currentYear);
             }
+            player.processNewMonth();
 
             currentMonthHuman = Months.months[currentMonth];
             trace("new month " + currentMonthHuman);

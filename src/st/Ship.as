@@ -1,7 +1,5 @@
 package st
 {
-    import mx.collections.ArrayCollection;
-
     public class Ship
     {
         [Bindable]
@@ -11,7 +9,10 @@ package st
         public var capacity:uint = 1.2;
 
         [Bindable]
-        public var traderoute:TradeRoute = new TradeRoute();
+        public var age:uint; // month
+
+        [Bindable]
+        public var traderoute:Traderoute = new Traderoute();
 
         private static var totalid:uint = 0;
         private var id:uint = 0;
@@ -21,14 +22,14 @@ package st
             this.id = ++totalid;
         }
 
-        public function newTradeRoute(steps:Array):void
+        public function newTradeRoute(t:Traderoute):void
         {
-            traderoute.tradeSteps = new ArrayCollection(steps);
+            traderoute = t;
         }
 
         public function toString():String
         {
-            return "s" + this.id + "/" + traderoute;
+            return "ship" + this.id;
         }
     }
 }

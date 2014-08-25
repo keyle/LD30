@@ -5,11 +5,14 @@
           xmlns:c="*" show="onShow()">
 
     <fx:Script><![CDATA[
+        import mx.collections.ArrayCollection;
+
         import st.MaterialLibrary;
         import st.PlanetsLibrary;
         import st.Player;
         import st.Ship;
         import st.TradeStep;
+        import st.Traderoute;
 
         [Inject]
         [Bindable]
@@ -29,7 +32,8 @@
             if (planet1.selectedIndex == -1
                     || planet2.selectedIndex == -1
                     || material1.selectedIndex == -1
-                    || material2.selectedIndex == -1)
+                    || material2.selectedIndex == -1
+                    || ship.selectedIndex == -1)
             {
                 warning.visible = warning.includeInLayout = true;
                 return;
@@ -42,12 +46,17 @@
             step1.colony = planet1.selectedItem;
             step1.unload = material2.selectedItem;
             step1.load = material1.selectedItem;
+
             var step2:TradeStep = new TradeStep();
             step2.colony = planet2.selectedItem;
             step2.unload = material1.selectedItem;
             step2.load = material2.selectedItem;
 
-            Ship(player.ships[0]).newTradeRoute([step1, step2]);
+            var t:Traderoute = new Traderoute();
+            t.tradeSteps = new ArrayCollection([step1, step2]);
+            Ship(ship.selectedItem).newTradeRoute(t);
+            player.traderoutes.addItem(t);
+
             this.visible = false;
             cleanup();
         }
@@ -55,7 +64,8 @@
         public function cleanup():void
         {
             warning.visible = warning.includeInLayout = false;
-            planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex = material2.selectedIndex = -1;
+            planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex
+                    = material2.selectedIndex = ship.selectedIndex = -1;
         }
 
         private function onShow():void
@@ -67,7 +77,6 @@
     <pn:PanelBase title="Traderoute" />
 
     <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
-
 
         <s:Group width="100%">
             <s:DropDownList id="planet1" left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
@@ -96,8 +105,16 @@
         <s:Label id="warning" text="Invalid selection. Please check above." color="{Global.RED}" visible="false"
                  includeInLayout="false" />
 
-        <s:Button label="Start Traderoute" click="startClick()"
-                  skinClass="skins.ButtonGreen" horizontalCenter="10" />
+        <s:HGroup width="100%">
+
+            <s:DropDownList id="ship" skinClass="skins.DropDownBlue" dataProvider="{player.ships}"
+                            prompt="Please Select" />
+
+            <s:Spacer width="100%" />
+
+            <s:Button label="Start Traderoute" click="startClick()"
+                      skinClass="skins.ButtonGreen" horizontalCenter="10" />
+        </s:HGroup>
 
     </s:VGroup>
 </c:PGroup>

@@ -1,0 +1,9 @@
+
+- have a screen showing ship trades
+- ability to sell ships
+- see ships moving and progress
+- ships to make money
+- ships to depreciate
+- random events to occur
+
+
