@@ -5,32 +5,46 @@
           xmlns:c="*">
 
     <fx:Script><![CDATA[
-        import st.MaterialLibrary;
-        import st.PlanetsLibrary;
+        import messages.ShowNewTradeCue;
+        import messages.TraderouteAddedMessage;
+
         import st.Player;
 
         [Inject]
         [Bindable]
         public var player:Player;
 
-        [Inject]
-        [Bindable]
-        public var planetLibrary:PlanetsLibrary;
+        private function addNewRoute(event:MouseEvent):void
+        {
+            send(new ShowNewTradeCue());
+        }
 
-        [Inject]
-        [Bindable]
-        public var materialLibrary:MaterialLibrary;
+        [MessageHandler]
+        public function onTraderouteAddedMessage(message:TraderouteAddedMessage):void
+        {
+            trace('THGINGS');
+            list.invalidateDisplayList();
+            trace(player.traderoutes);
+            trace(player.traderoutes);
+            trace(player.traderoutes);
+            trace(player.traderoutes);
+        }
         ]]></fx:Script>
 
-    <pn:PanelBase title="Traderoute" />
+    <pn:PanelBase title="Active Traderoutes" />
 
-    <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
+    <s:VGroup top="90" left="30" right="30" bottom="90" gap="30">
 
-        <s:DataGroup dataProvider="{player.traderoutes}" itemRenderer="">
-            <s:layout>
+        <s:DataGroup id="list" dataProvider="{player.traderoutes}" itemRenderer="skins.TradeRouteRenderer"
+                     minHeight="150" width="100%">
+        <s:layout>
                 <s:VerticalLayout gap="20" />
             </s:layout>
         </s:DataGroup>
 
     </s:VGroup>
+
+    <s:Button label="Add New Traderoute" click="addNewRoute(event)"
+              skinClass="skins.ButtonGreen" bottom="30" left="30" />
+
 </c:PGroup>

@@ -5,6 +5,8 @@
           xmlns:c="*" show="onShow()">
 
     <fx:Script><![CDATA[
+        import messages.TraderouteAddedMessage;
+
         import mx.collections.ArrayCollection;
 
         import st.MaterialLibrary;
@@ -58,6 +60,8 @@
             Ship(ship.selectedItem).newTradeRoute(t);
             player.traderoutes.addItem(t);
 
+            send(new TraderouteAddedMessage());
+
             this.visible = false;
             cleanup();
         }
@@ -65,8 +69,8 @@
         public function cleanup():void
         {
             warning.visible = warning.includeInLayout = false;
-            planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex
-                    = material2.selectedIndex = ship.selectedIndex = -1;
+            //            planet1.selectedIndex = planet2.selectedIndex = material1.selectedIndex
+            //                    = material2.selectedIndex = ship.selectedIndex = -1;
         }
 
         private function onShow():void
@@ -85,15 +89,15 @@
         }
         ]]></fx:Script>
 
-    <pn:PanelBase title="Traderoute" />
+    <pn:PanelBase title="New Traderoute" />
 
     <s:VGroup top="90" left="30" right="30" bottom="30" gap="30">
 
         <s:Group width="100%">
             <s:DropDownList id="planet1" left="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
-                            prompt="Please Select" change="onPlanetChange1()" />
+                            prompt="From Planet" change="onPlanetChange1()" selectedIndex="0" />
             <s:DropDownList id="planet2" right="0" skinClass="skins.DropDownBlue" dataProvider="{planetLibrary}"
-                            prompt="Please Select" change="onPlanetChange2()" />
+                            prompt="To Planet" change="onPlanetChange2()" selectedIndex="0" />
         </s:Group>
 
         <s:Group width="100%">
@@ -104,9 +108,9 @@
 
             <s:VGroup horizontalCenter="0" verticalCenter="0" gap="20">
                 <s:DropDownList id="material1" skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
-                                prompt="Please Select" />
+                                prompt="Load Material" selectedIndex="0" />
                 <s:DropDownList id="material2" skinClass="skins.DropDownBlue" dataProvider="{materialLibrary}"
-                                prompt="Please Select" />
+                                prompt="Unload Material" selectedIndex="0" />
             </s:VGroup>
 
             <s:BitmapImage id="planeticon2" right="0" width="120" height="120" smooth="true" />
@@ -114,12 +118,12 @@
         </s:Group>
 
         <s:Label id="warning" text="Invalid selection. Please check above." color="{Global.RED}" visible="false"
-                 includeInLayout="false" />
+                 includeInLayout="false" width="100%" textAlign="center" />
 
         <s:HGroup width="100%">
 
             <s:DropDownList id="ship" skinClass="skins.DropDownBlue" dataProvider="{player.ships}"
-                            prompt="Please Select" />
+                            prompt="Ship" selectedIndex="0" />
 
             <s:Spacer width="100%" />
 

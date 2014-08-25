@@ -10,7 +10,7 @@ package st
 
         public function toString():String
         {
-            return "(" + tradeSteps.length + ")";
+            return "traderoute (" + tradeSteps.length + ")";
         }
     }
 }

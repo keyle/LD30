@@ -9,6 +9,11 @@
         <parsley:Configure />
     </fx:Declarations>
 
+    <fx:Script><![CDATA[
+        [MessageDispatcher]
+        public var send:Function;
+        ]]></fx:Script>
+
     <s:mxmlContent />
 
 </s:Group>
