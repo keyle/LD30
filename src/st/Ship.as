@@ -29,7 +29,7 @@ package st
 
         public function toString():String
         {
-            return "ship" + this.id;
+            return "Ship" + this.id;
         }
     }
 }

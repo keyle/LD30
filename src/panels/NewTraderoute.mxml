@@ -56,6 +56,7 @@
             step2.load = material2.selectedItem;
 
             var t:Traderoute = new Traderoute();
+            t.ship = Ship(ship.selectedItem);
             t.tradeSteps = new ArrayCollection([step1, step2]);
             Ship(ship.selectedItem).newTradeRoute(t);
             player.traderoutes.addItem(t);

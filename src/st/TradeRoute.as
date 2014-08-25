@@ -8,9 +8,19 @@ package st
         [ArrayElementType("st.TradeStep")]
         public var tradeSteps:ArrayCollection = new ArrayCollection();
 
+        [Bindable]
+        public var active:Boolean = true;
+
+        [Bindable]
+        public var ship:Ship;
+
         public function toString():String
         {
-            return "traderoute (" + tradeSteps.length + ")";
+            if (tradeSteps[0] && tradeSteps[1])
+                return ship + ": " + TradeStep(tradeSteps[0]).colony + " - " + TradeStep(tradeSteps[1]).colony + "   ("
+                        + TradeStep(tradeSteps[0]).load + " - " + TradeStep(tradeSteps[1]).load + ")";
+            else
+                return "inactive Traderoute"
         }
     }
 }

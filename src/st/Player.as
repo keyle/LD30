@@ -28,7 +28,7 @@ package st
 
         [Bindable]
         [ArrayElementType("st.Traderoute")]
-        public var traderoutes:ArrayCollection = new ArrayCollection([new Traderoute()]);
+        public var traderoutes:ArrayCollection = new ArrayCollection();
 
         public function processNewYear():void
         {

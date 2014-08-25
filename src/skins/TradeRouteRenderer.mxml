@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
-                width="100%" autoDrawBackground="false">
+                width="100%" autoDrawBackground="false" minHeight="35">
 
     <s:HGroup width="100%" height="100%" verticalAlign="middle">
         <s:Label text="{Traderoute(data)}" color="white" />
+        <s:Button icon="{ImageLib.CLOSE}" skinClass="skins.ButtonClose" scaleX="0.75" scaleY="0.75" />
     </s:HGroup>
 
     <fx:Script><![CDATA[

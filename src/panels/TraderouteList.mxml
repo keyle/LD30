@@ -35,12 +35,12 @@
 
     <s:VGroup top="90" left="30" right="30" bottom="90" gap="30">
 
-        <s:DataGroup id="list" dataProvider="{player.traderoutes}" itemRenderer="skins.TradeRouteRenderer"
+        <s:List id="list" dataProvider="{player.traderoutes}" itemRenderer="skins.TradeRouteRenderer"
                      minHeight="150" width="100%">
         <s:layout>
                 <s:VerticalLayout gap="20" />
             </s:layout>
-        </s:DataGroup>
+        </s:List>
 
     </s:VGroup>
 

@@ -15,6 +15,6 @@
         <s:State name="up" />
     </s:states>
 
-    <s:BitmapImage id="iconDisplay" />
+    <s:BitmapImage id="iconDisplay" smooth="true" />
 
 </s:Skin>
