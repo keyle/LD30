@@ -29,6 +29,7 @@
         {
             UIComponent(this.owner).stopDrag();
             UIComponent(this.owner).includeInLayout = true;
+            UIComponent(this.owner).move(UIComponent(this.owner).mx_internal::$x, UIComponent(this.owner).mx_internal::$y);
             UIComponent(this.owner).invalidateDisplayList();
         }
 
