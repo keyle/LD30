@@ -28,14 +28,12 @@
         private function stageMouseUP(event:MouseEvent):void
         {
             UIComponent(this.owner).stopDrag();
-            UIComponent(this.owner).includeInLayout = true;
             UIComponent(this.owner).move(UIComponent(this.owner).mx_internal::$x, UIComponent(this.owner).mx_internal::$y);
             UIComponent(this.owner).invalidateDisplayList();
         }
 
         private function mouseDown(event:MouseEvent):void
         {
-            UIComponent(this.owner).includeInLayout = false;
             UIComponent(this.owner).depth = ++maxDepth;
             UIComponent(this.owner).startDrag();
         }

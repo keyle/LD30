@@ -78,15 +78,15 @@
 
 
     <ps:Financials id="panelFinancials" visible="false"
-                   horizontalCenter="0" bottom="100" cacheAsBitmap="true" />
+                   cacheAsBitmap="true" />
 
     <ps:Fleet id="panelFleet" visible="false"
               horizontalCenter="0" verticalCenter="0" cacheAsBitmap="true" />
 
-    <ps:TraderouteList id="panelTraderouteList" visible="false" horizontalCenter="0" verticalCenter="0"
+    <ps:TraderouteList id="panelTraderouteList" visible="false"
                        cacheAsBitmap="true" />
 
-    <ps:NewTraderoute id="panelTraderouteNew" visible="false" horizontalCenter="0" verticalCenter="0"
+    <ps:NewTraderoute id="panelTraderouteNew" visible="false"
                       cacheAsBitmap="true" />
 
 </p:PGroup>
